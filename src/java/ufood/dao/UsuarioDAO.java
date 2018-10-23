@@ -11,13 +11,13 @@ import java.sql.Connection;
  *
  * @author Eduardo Santos
  */
-public class UserDAO {
-    private static UserDAO userDAO = new UserDAO();
+public class UsuarioDAO {
+    private static UsuarioDAO userDAO = new UsuarioDAO();
     private Connection conn;
-    public static UserDAO getInstance() {
+    public static UsuarioDAO getInstance() {
         return userDAO;
     }
-    private UserDAO(){
+    private UsuarioDAO(){
         
     }
 }
