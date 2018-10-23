@@ -1,0 +1,55 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ufood.model;
+
+/**
+ *
+ * @author ismael.pereira
+ */
+public class Compra {
+    private Long idCompra;
+    private Long idUsuario;
+    private Long idProduto;
+
+    public Compra(Long idCompra, Long idUsuario, Long idProduto) {
+        this.idCompra = idCompra;
+        this.idUsuario = idUsuario;
+        this.idProduto = idProduto;
+    }
+    
+    public Compra(){
+    }
+
+    public Long getIdCompra() {
+        return idCompra;
+    }
+
+    public Long getIdUsuario() {
+        return idUsuario;
+    }
+
+    public Long getIdProduto() {
+        return idProduto;
+    }
+
+    public Compra setIdCompra(Long idCompra) {
+        this.idCompra = idCompra;
+        return this;
+    }
+
+    public Compra setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
+        return this;
+    }
+
+    public Compra setIdProduto(Long idProduto) {
+        this.idProduto = idProduto;
+        return this;
+    }
+    
+    
+    
+}
