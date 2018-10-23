@@ -5,11 +5,14 @@
  */
 package ufood.model;
 
+import java.util.Observable;
+import java.util.Observer;
+
 /**
  *
  * @author Eduardo Santos
  */
-public class Usuario {
+public class Usuario implements Observer{
     
     private Long idUsuario;
     private String nome;
@@ -49,5 +52,10 @@ public class Usuario {
     public Usuario setSenha(String senha) {
         this.senha = senha;
         return this;
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        System.out.println("Foi mudado");
     }
 }
