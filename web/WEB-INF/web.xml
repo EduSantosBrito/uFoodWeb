@@ -4,9 +4,25 @@
         <servlet-name>FrontController</servlet-name>
         <servlet-class>ufood.controller.FrontController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>chainController</servlet-name>
+        <servlet-class>ufood.chain.chainController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChainController</servlet-name>
+        <servlet-class>ufood.controller.ChainController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
         <url-pattern>/FrontController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>chainController</servlet-name>
+        <url-pattern>/chainController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChainController</servlet-name>
+        <url-pattern>/ChainController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
