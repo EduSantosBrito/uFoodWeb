@@ -1,5 +1,9 @@
 package ufood.model;
-public class Produto {
+
+import java.util.Observable;
+
+
+public class Produto extends Observable {
     
     private Long idProduto;
     private String nome;
