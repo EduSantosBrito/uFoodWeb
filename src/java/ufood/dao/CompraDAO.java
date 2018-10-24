@@ -72,9 +72,6 @@ public class CompraDAO {
         }
         return compras;
     }
-     
-     
-     
      private void closeResources(Statement st, Connection conn) {
        try {
             if(st!=null) st.close();
