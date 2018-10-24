@@ -45,12 +45,12 @@ public class ProdutoDAO {
         }
     }
     
-    public void delete(Integer id) throws SQLException, ClassNotFoundException {
+    public void delete(Integer idProduto) throws SQLException, ClassNotFoundException {
         Statement st = null;
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            st.execute("delete from empresa where codempresa = '" + id + "';");
+            st.execute("delete from empresa where idproduto = '" + idProduto + "';");
         } catch(SQLException e) {
             throw e;
         } finally {
@@ -58,13 +58,13 @@ public class ProdutoDAO {
         }
     }
     
-    public List<Empresa> read(Integer id) throws SQLException, ClassNotFoundException {
+    public List<Empresa> read(Integer idProduto) throws SQLException, ClassNotFoundException {
         Statement st = null;
         List<Empresa> empresas = new ArrayList<>();
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("select * from empresa where codempresa = '" + id + "';");
+            ResultSet rs = st.executeQuery("select * from empresa where idproduto = '" + idProduto + "';");
             while(rs.next()){
               // empresas.add(new Empresa(rs.getInt("codempresa"),rs.getString("descricao")));
             }
