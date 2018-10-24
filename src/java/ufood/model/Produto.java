@@ -11,6 +11,14 @@ public class Produto extends Observable {
     private Double tipo;
     private Long idEmpresa;
 
+    public Produto(Long idProduto, String nome, Double preco, Double tipo, Long idEmpresa) {
+        this.idProduto = idProduto;
+        this.nome = nome;
+        this.preco = preco;
+        this.tipo = tipo;
+        this.idEmpresa = idEmpresa;
+    }
+
     public Long getIdProduto() {
         return idProduto;
     }
