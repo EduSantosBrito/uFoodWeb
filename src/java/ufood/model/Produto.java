@@ -1,6 +1,7 @@
 package ufood.model;
 
 import java.util.Observable;
+import ufood.state.ProdutoState;
 
 
 public class Produto extends Observable {
@@ -10,6 +11,7 @@ public class Produto extends Observable {
     private Double preco;
     private Double tipo;
     private Long idEmpresa;
+    private ProdutoState state;
 
     public Produto(Long idProduto, String nome, Double preco, Double tipo, Long idEmpresa) {
         this.idProduto = idProduto;
@@ -63,6 +65,37 @@ public class Produto extends Observable {
         this.idEmpresa = idEmpresa;
         return this;
     }
+
+    public ProdutoState getState() {
+        return state;
+    }
+
+    public void setState(ProdutoState state) {
+        this.state = state;
+    }
     
+    public void pedir() {
+        state.pedir();
+        setChanged();
+        notifyObservers();
+    }
+    
+    public void enviar() {
+        state.enviar();
+        setChanged();
+        notifyObservers();
+    }
+    
+    public void receber() {
+        state.receber();
+        setChanged();
+        notifyObservers();
+    }
+    
+    public void cancelar() {
+        state.cancelar();
+        setChanged();
+        notifyObservers();
+    }
     
 }
