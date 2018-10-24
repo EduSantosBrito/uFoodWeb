@@ -23,7 +23,7 @@ public class EnviadoState implements ProdutoState{
 
     @Override
     public ProdutoState receber() {
-        return RecebidoState;
+        return new RecebidoState();
     }
 
     @Override
