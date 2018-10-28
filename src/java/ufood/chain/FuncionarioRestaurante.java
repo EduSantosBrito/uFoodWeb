@@ -9,9 +9,9 @@ package ufood.chain;
  *
  * @author ismael.pereira
  */
-public class FuncionarioRestaurante extends ChainMae {
+public class FuncionarioRestaurante extends FuncionarioChain {
 
-    public FuncionarioRestaurante(ChainMae proximoPasso) {
+    public FuncionarioRestaurante(FuncionarioChain proximoPasso) {
         super(proximoPasso);
     }
 

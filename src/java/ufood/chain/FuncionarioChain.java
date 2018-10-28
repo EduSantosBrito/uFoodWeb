@@ -9,11 +9,11 @@ package ufood.chain;
  *
  * @author ismael.pereira
  */
-public abstract class ChainMae {
+public abstract class FuncionarioChain {
 
-    public ChainMae proximoPasso;
+    public FuncionarioChain proximoPasso;
 
-    public ChainMae(ChainMae proximoPasso) {
+    public FuncionarioChain(FuncionarioChain proximoPasso) {
         this.proximoPasso = proximoPasso;
     }
 
