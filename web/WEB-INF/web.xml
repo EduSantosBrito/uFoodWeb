@@ -12,6 +12,14 @@
         <servlet-name>ChainController</servlet-name>
         <servlet-class>ufood.controller.ChainController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProdutoCreateController</servlet-name>
+        <servlet-class>ufood.controller.ProdutoCreateController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EmpresaCreateController</servlet-name>
+        <servlet-class>ufood.controller.EmpresaCreateController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
         <url-pattern>/FrontController</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>ChainController</servlet-name>
         <url-pattern>/ChainController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProdutoCreateController</servlet-name>
+        <url-pattern>/ProdutoCreateController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmpresaCreateController</servlet-name>
+        <url-pattern>/EmpresaCreateController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

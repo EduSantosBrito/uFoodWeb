@@ -6,18 +6,21 @@
 package ufood.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import ufood.chain.FuncionarioRestaurante;
-import ufood.chain.FuncionarioUFood;
+import ufood.dao.ProdutoDAO;
+import ufood.model.Produto;
 
 /**
  *
- * @author ismael.pereira
+ * @author Eduardo Santos
  */
-public class ChainController extends HttpServlet {
+public class ProdutoCreateController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,14 +33,21 @@ public class ChainController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String tipo = request.getParameter("tipoProblema");
-        FuncionarioRestaurante funcionario = new FuncionarioRestaurante(new FuncionarioUFood(null));
+        Produto produto = new Produto();
+        produto.setIdProduto(Long.parseLong(request.getParameter("id")));
+        produto.setNome(request.getParameter("name"));
+        produto.setPreco(Double.parseDouble(request.getParameter("preco")));
+        produto.setTipo(Double.parseDouble(request.getParameter("tipo")));
+        produto.setIdEmpresa(Long.parseLong(request.getParameter("idEmpresa")));
         String page = "error.jsp";
-        if(funcionario.isResolved(tipo)){
+        try {
+            ProdutoDAO.getInstance().save(produto);
             page = "success.jsp";
+        } catch (ClassNotFoundException ex) {
+        } catch (SQLException ex) {
         }
-
         response.sendRedirect(page);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
