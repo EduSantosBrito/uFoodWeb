@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Homepage</title>
+        <title>uFood - Seja Bem-vindo</title>
     </head>
     <body>
         <h1>Homepage</h1>
@@ -18,5 +18,6 @@
         <a href="createEmpresa.jsp"><button>Criar empresa</button></a>
         <a href="createProduto.jsp"><button>Criar produto</button></a>
         <a href="produtoMudarEstado.jsp"><button>Mudar Estado</button></a>
+        <a href="pagar.jsp"><button>Pagar</button></a>
     </body>
 </html>

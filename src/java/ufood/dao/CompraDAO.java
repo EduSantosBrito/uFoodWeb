@@ -36,8 +36,8 @@ public class CompraDAO {
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            st.execute("insert into compra(idCompra,idUsuario,idProduto) values ('" + compra.getIdCompra()
-                    + "', '" + compra.getIdUsuario() + "', '" + compra.getIdProduto() + "');");
+            st.execute("insert into compra(idCompra,idUsuario,idProduto, tipoCartao) values ('" + compra.getIdCompra()
+                    + "', '" + compra.getIdUsuario() + "', '" + compra.getIdProduto() + "','" + compra.getTipoCompra() + "');");
         } catch (SQLException e) {
             throw e;
         } finally {
@@ -66,7 +66,7 @@ public class CompraDAO {
             st = conn.createStatement();
             ResultSet rs = st.executeQuery("Select * from compra where id = '" + id + "';");
             while (rs.next()) {
-                compras.add(new Compra(rs.getLong("idCompra"), rs.getLong("idUsuario"), rs.getLong("idProduto")));
+                compras.add(new Compra(rs.getLong("idCompra"), rs.getLong("idUsuario"), rs.getLong("idProduto"), null));
             }
         } catch (SQLException e) {
             throw e;
@@ -84,7 +84,7 @@ public class CompraDAO {
             st = conn.createStatement();
             ResultSet rs = st.executeQuery("Select * from compra");
             while (rs.next()) {
-                compras.add(new Compra(rs.getLong("idCompra"), rs.getLong("idUsuario"), rs.getLong("idProduto")));
+                compras.add(new Compra(rs.getLong("idCompra"), rs.getLong("idUsuario"), rs.getLong("idProduto"), null));
             }
         } catch (SQLException e) {
             throw e;

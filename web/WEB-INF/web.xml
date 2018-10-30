@@ -25,8 +25,13 @@
         <servlet-class>ufood.controller.UsuarioCreateController</servlet-class>
     </servlet>
     <servlet>
+<<<<<<< HEAD
         <servlet-name>MementoController</servlet-name>
         <servlet-class>ufood.controller.MementoController</servlet-class>
+=======
+        <servlet-name>PagarController</servlet-name>
+        <servlet-class>ufood.controller.PagarController</servlet-class>
+>>>>>>> e04b58220157434eaa67724b56b1e45825d65157
     </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
@@ -53,8 +58,13 @@
         <url-pattern>/UsuarioCreateController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+<<<<<<< HEAD
         <servlet-name>MementoController</servlet-name>
         <url-pattern>/MementoController</url-pattern>
+=======
+        <servlet-name>PagarController</servlet-name>
+        <url-pattern>/PagarController</url-pattern>
+>>>>>>> e04b58220157434eaa67724b56b1e45825d65157
     </servlet-mapping>
     <session-config>
         <session-timeout>
