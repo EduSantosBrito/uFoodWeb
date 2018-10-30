@@ -58,13 +58,31 @@ public class CompraDAO {
         }
     }
 
-    public List<Compra> read(Integer id) throws SQLException, ClassNotFoundException {
+    public List<Compra> read(Long id) throws SQLException, ClassNotFoundException {
         Statement st = null;
         List<Compra> compras = new ArrayList<>();
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("");
+            ResultSet rs = st.executeQuery("Select * from compra where id = '" + id + "';");
+            while (rs.next()) {
+                compras.add(new Compra(rs.getLong("idCompra"), rs.getLong("idUsuario"), rs.getLong("idProduto")));
+            }
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            closeResources(st, conn);
+        }
+        return compras;
+    }
+    
+    public List<Compra> readAll() throws ClassNotFoundException, SQLException {
+        Statement st = null;
+        List<Compra> compras = new ArrayList<>();
+        try {
+            conn = DatabaseLocator.getInstance().getConnection();
+            st = conn.createStatement();
+            ResultSet rs = st.executeQuery("Select * from compra");
             while (rs.next()) {
                 compras.add(new Compra(rs.getLong("idCompra"), rs.getLong("idUsuario"), rs.getLong("idProduto")));
             }
