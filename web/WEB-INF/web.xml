@@ -24,6 +24,10 @@
         <servlet-name>UsuarioCreateController</servlet-name>
         <servlet-class>ufood.controller.UsuarioCreateController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PagarController</servlet-name>
+        <servlet-class>ufood.controller.PagarController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
         <url-pattern>/FrontController</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>UsuarioCreateController</servlet-name>
         <url-pattern>/UsuarioCreateController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PagarController</servlet-name>
+        <url-pattern>/PagarController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

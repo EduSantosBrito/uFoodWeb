@@ -5,6 +5,8 @@
  */
 package ufood.model;
 
+import ufood.template.TipoCompra;
+
 /**
  *
  * @author ismael.pereira
@@ -13,11 +15,13 @@ public class Compra {
     private Long idCompra;
     private Long idUsuario;
     private Long idProduto;
+    private TipoCompra tipoCompra;
 
-    public Compra(Long idCompra, Long idUsuario, Long idProduto) {
+    public Compra(Long idCompra, Long idUsuario, Long idProduto, TipoCompra tipoCompra) {
         this.idCompra = idCompra;
         this.idUsuario = idUsuario;
         this.idProduto = idProduto;
+        this.tipoCompra = tipoCompra;
     }
     
     public Compra(){
@@ -49,6 +53,17 @@ public class Compra {
         this.idProduto = idProduto;
         return this;
     }
+
+    public TipoCompra getTipoCompra() {
+        return tipoCompra;
+    }
+
+    public Compra setTipoCompra(TipoCompra tipoCompra) {
+        this.tipoCompra = tipoCompra;
+        return this;
+    }
+    
+    
     
     
     
