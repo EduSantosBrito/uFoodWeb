@@ -23,7 +23,7 @@ public class DatabaseLocator {
     
     public Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/ufood", "root", "");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/ufood", "root", "root");
         return conn;
     }
 }
