@@ -17,6 +17,6 @@
         <a href="createUsuario.jsp"><button>Criar usuário</button></a>
         <a href="createEmpresa.jsp"><button>Criar empresa</button></a>
         <a href="createProduto.jsp"><button>Criar produto</button></a>
-        
+        <a href="produtoMudarEstado.jsp"><button>Mudar Estado</button></a>
     </body>
 </html>

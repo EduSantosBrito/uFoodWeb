@@ -24,6 +24,10 @@
         <servlet-name>UsuarioCreateController</servlet-name>
         <servlet-class>ufood.controller.UsuarioCreateController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MementoController</servlet-name>
+        <servlet-class>ufood.controller.MementoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
         <url-pattern>/FrontController</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>UsuarioCreateController</servlet-name>
         <url-pattern>/UsuarioCreateController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MementoController</servlet-name>
+        <url-pattern>/MementoController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

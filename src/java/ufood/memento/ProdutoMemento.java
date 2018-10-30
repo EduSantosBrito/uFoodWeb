@@ -12,13 +12,15 @@ import ufood.state.ProdutoState;
  * @author Eduardo Santos
  */
 public class ProdutoMemento {
+
     ProdutoState estado;
-    
-    public ProdutoState getEstado() {
-        return estado;
-    }
 
     public ProdutoMemento(ProdutoState estado) {
         this.estado = estado;
     }
+
+    public ProdutoState getEstado() {
+        return estado;
+    }
+
 }

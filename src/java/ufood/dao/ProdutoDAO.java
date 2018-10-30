@@ -11,7 +11,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import ufood.model.Empresa;
 import ufood.model.Produto;
 import ufood.persistence.DatabaseLocator;
 
@@ -45,7 +44,7 @@ public class ProdutoDAO {
         }
     }
     
-    public void delete(Integer idProduto) throws SQLException, ClassNotFoundException {
+    public void delete(Long idProduto) throws SQLException, ClassNotFoundException {
         Statement st = null;
         try {
             conn = DatabaseLocator.getInstance().getConnection();
@@ -58,22 +57,24 @@ public class ProdutoDAO {
         }
     }
     
-    public List<Empresa> read(Integer idProduto) throws SQLException, ClassNotFoundException {
+    public List<Produto> read(Long idProduto) throws SQLException, ClassNotFoundException {
         Statement st = null;
-        List<Empresa> empresas = new ArrayList<>();
+        List<Produto> produtos = new ArrayList<>();
         try {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            ResultSet rs = st.executeQuery("select * from empresa where idproduto = '" + idProduto + "';");
+            ResultSet rs = st.executeQuery("select * from produto where idProduto = '" + idProduto + "';");
             while(rs.next()){
-              // empresas.add(new Empresa(rs.getInt("codempresa"),rs.getString("descricao")));
+                produtos.add(new Produto(rs.getLong("idProduto"),rs.getString("nome"),rs.getDouble("preco"),
+                        rs.getString("tipo"),rs.getLong("idEmpresa")));
+              //empresas.add(new Empresa(rs.getInt("codempresa"),rs.getString("descricao")));
             }
         } catch(SQLException e) {
             throw e;
         } finally {
             closeResources(st, conn);
         }
-        return empresas;
+        return produtos;
     }
 
     private void closeResources(Statement st, Connection conn) {
