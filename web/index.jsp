@@ -14,5 +14,9 @@
     <body>
         <h1>Homepage</h1>
         <a href="reclamacao.jsp"><button>Reclamar</button></a>
+        <a href="createUsuario.jsp"><button>Criar usuário</button></a>
+        <a href="createEmpresa.jsp"><button>Criar empresa</button></a>
+        <a href="createProduto.jsp"><button>Criar produto</button></a>
+        
     </body>
 </html>

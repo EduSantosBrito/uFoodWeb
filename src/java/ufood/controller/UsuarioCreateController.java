@@ -7,18 +7,20 @@ package ufood.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import ufood.dao.ProdutoDAO;
-import ufood.model.Produto;
+import ufood.dao.UsuarioDAO;
+import ufood.model.Usuario;
 
 /**
  *
  * @author Eduardo Santos
  */
-public class ProdutoCreateController extends HttpServlet {
+public class UsuarioCreateController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,21 +33,19 @@ public class ProdutoCreateController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Produto produto = new Produto();
-        produto.setIdProduto(Long.parseLong(request.getParameter("id")));
-        produto.setNome(request.getParameter("nome"));
-        produto.setPreco(Double.parseDouble(request.getParameter("preco")));
-        produto.setTipo(request.getParameter("tipo"));
-        produto.setIdEmpresa(Long.parseLong(request.getParameter("idEmpresa")));
+        Usuario usuario = new Usuario();
+        usuario.setIdUsuario(Long.parseLong(request.getParameter("id")));
+        usuario.setNome(request.getParameter("username"));
+        usuario.setSenha(request.getParameter("password"));
         String page = "error.jsp";
         try {
-            ProdutoDAO.getInstance().save(produto);
+            UsuarioDAO.getInstance().save(usuario);
             page = "success.jsp";
         } catch (ClassNotFoundException ex) {
         } catch (SQLException ex) {
         }
-        response.sendRedirect(page);
         
+        response.sendRedirect(page);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

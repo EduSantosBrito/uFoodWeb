@@ -9,11 +9,11 @@ public class Produto extends Observable {
     private Long idProduto;
     private String nome;
     private Double preco;
-    private Double tipo;
+    private String tipo;
     private Long idEmpresa;
     private ProdutoState state;
 
-    public Produto(Long idProduto, String nome, Double preco, Double tipo, Long idEmpresa) {
+    public Produto(Long idProduto, String nome, Double preco, String tipo, Long idEmpresa) {
         this.idProduto = idProduto;
         this.nome = nome;
         this.preco = preco;
@@ -51,11 +51,11 @@ public class Produto extends Observable {
         return this;
     }
 
-    public Double getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public Produto setTipo(Double tipo) {
+    public Produto setTipo(String tipo) {
         this.tipo = tipo;
         return this;
     }

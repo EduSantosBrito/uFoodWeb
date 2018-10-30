@@ -12,18 +12,19 @@
         <title>Criar Produto</title>
     </head>
     <body>
-        <form action="ProjetoSaveController" method="get">
-            <label for="id">Id</label>
-            <input type="text" name="id">
-            <label for="nome">Nome</label>
-            <input type="text" name="nome">
-            <label for="preco">Preço</label>
-            <input type="text" name="preco">
-            <label for="tipo">Tipo</label>
-            <input type="text" name="tipo">
-            <label for="idEmpresa">Empresa</label>
-            <input type="text" name="idEmpresa">
-            <input type="submit">
+        <form action="ProdutoCreateController" method="post">
+            <label for="id">Id</label><br>
+            <input type="text" name="id"><br>
+            <label for="nome">Nome</label><br>
+            <input type="text" name="nome"><br>
+            <label for="preco">Preço</label><br>
+            <input type="text" name="preco"><br>
+            <label for="tipo">Tipo</label><br>
+            <input type="text" name="tipo"><br>
+            <label for="idEmpresa">Empresa</label><br>
+            <input type="text" name="idEmpresa"><br>
+            <input type="submit"><br>
         </form>
+        <a href="index.jsp"><button>Home</button></a>
     </body>
 </html>
