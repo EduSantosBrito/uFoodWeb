@@ -37,7 +37,7 @@ public class ProdutoDAO {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
             st.execute("insert into produto (idProduto, nome, preco, tipo, idEmpresa)" +
-                        " values ('"+ produto.getIdProduto() +"', '" + produto.getNome()+ "', '" + produto.getPreco() + "', '" + produto.getTipo() + "', '" + produto.getIdEmpresa() + "')");
+                        " values ('"+ produto.getIdProduto() +"', '" + produto.getNome()+ "', '" + produto.getPreco() + "', '" + produto.getTipo() + "', '" + produto.getIdEmpresa() + "');");
         } catch(SQLException e) {
             throw e;
         } finally {

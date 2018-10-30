@@ -36,7 +36,7 @@ public class EmpresaDAO {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
             st.execute("insert into empresa (idEmpresa, nome)" +
-                        " values ('"+ empresa.getIdEmpresa() +"', '" + empresa.getNome()+ "')");
+                        " values ('"+ empresa.getIdEmpresa() +"', '" + empresa.getNome()+ "');");
         } catch(SQLException e) {
             throw e;
         } finally {

@@ -38,7 +38,7 @@ public class UsuarioDAO {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
             st.execute("insert into usuario(idUsuario, nome, senha) values ('" + usuario.getIdUsuario()
-                    + "', '" + usuario.getNome() + "', '" + usuario.getSenha());
+                    + "', '" + usuario.getNome() + "', '" + usuario.getSenha() + "');");
         } catch (SQLException e) {
             throw e;
         } finally {

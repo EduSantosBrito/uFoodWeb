@@ -12,7 +12,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import ufood.model.Compra;
-import ufood.model.Empresa;
 import ufood.persistence.DatabaseLocator;
 
 /**
@@ -38,7 +37,7 @@ public class CompraDAO {
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
             st.execute("insert into compra(idCompra,idUsuario,idProduto) values ('" + compra.getIdCompra()
-                    + "', '" + compra.getIdUsuario() + "', '" + compra.getIdProduto());
+                    + "', '" + compra.getIdUsuario() + "', '" + compra.getIdProduto() + "');");
         } catch (SQLException e) {
             throw e;
         } finally {
